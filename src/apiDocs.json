@@ -1,0 +1,95 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Skinsense API",
+        "version": "1.0.0",
+        "description": "API documentation for the Skinsense API"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Development server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Data about users"
+        },
+        {
+            "name": "Auth",
+            "description": "Authentication"
+        },
+        {
+            "name": "Skin",
+            "description": "Data about skin"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all users",
+                "responses": {
+                    "200": {
+                        "description": "Success to get all users"
+                    }
+                }
+            }
+        },
+        "/users/{userId}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get user detail",
+                "responses": {
+                    "200": {
+                        "description": "Success to get user detail"
+                    }
+                }
+            }
+        },
+        "/users/signup": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Signup user",
+                "responses": {
+                    "200": {
+                        "description": "Success to signup user"
+                    }
+                }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login user",
+                "responses": {
+                    "200": {
+                        "description": "Success to login user"
+                    }
+                }
+            }
+        },
+        "/users/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout user",
+                "responses": {
+                    "200": {
+                        "description": "Success to logout user"
+                    }
+                }
+            }
+        }
+    }
+}
