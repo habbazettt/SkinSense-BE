@@ -9,10 +9,30 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id Int @id @default(autoincrement())
+model Users {
+  user_id    Int      @id @default(autoincrement())
+  username   String   @unique
+  email      String   @unique
+  password   String
+  created_at DateTime @default(now())
+}
+
+model Skin {
+  id         Int         @id @default(autoincrement())
+  result     String      @unique
+  suggestion String
+  Histories  Histories[]
+}
+
+model Histories {
+  id         Int      @id @default(autoincrement())
+  user_id    Int?
+  image      String
+  timeStamp  DateTime
+  skin       Skin     @relation(fields: [skinResult], references: [result])
+  skinResult String
 }
