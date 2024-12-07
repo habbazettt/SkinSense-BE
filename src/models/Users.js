@@ -22,7 +22,7 @@ const findUserByEmail = async (email) => {
 const findUserById = async (userId) => {
     const user = await prisma.Users.findUnique({
         where: {
-            user_id: userId
+            user_id: parseInt(userId, 10)
         }
     });
 

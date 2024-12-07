@@ -1,9 +1,9 @@
 const tfjs = require('@tensorflow/tfjs-node');
 
-const predict = async () => {
+const predict = async (image, model) => {
     const tensor = tfjs.node
-        .decodeJpeg(imageBuffer)
-        .resizeNearestNeighbor([150, 150])
+        .decodeJpeg(image)
+        .resizeNearestNeighbor([224, 224])
         .expandDims()
         .toFloat();
 

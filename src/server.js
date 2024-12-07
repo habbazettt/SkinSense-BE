@@ -8,8 +8,6 @@ const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 
-// loadModel();
-
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +22,9 @@ app.get("/", (req, res) => {
 // Handle routes users
 const userRoutes = require('./routes/user');
 app.use('/users', userRoutes);
+
+const skinRoutes = require('./routes/skin');
+app.use('/skin', skinRoutes);
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");

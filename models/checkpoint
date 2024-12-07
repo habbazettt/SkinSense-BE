@@ -1,2 +1,0 @@
-model_checkpoint_path: "melanoma_detector_weights.bin"
-all_model_checkpoint_paths: "melanoma_detector_weights.bin"

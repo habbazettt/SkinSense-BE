@@ -13,20 +13,14 @@ model Users {
   email      String   @unique
   password   String
   created_at DateTime @default(now())
+  Skin       Skin[]
 }
 
 model Skin {
-  id         Int         @id @default(autoincrement())
-  result     String      @unique
+  id         Int    @id @default(autoincrement())
+  result     String
   suggestion String
-  Histories  Histories[]
-}
-
-model Histories {
-  id         Int      @id @default(autoincrement())
-  user_id    Int?
-  image      String
-  timeStamp  DateTime
-  skin       Skin     @relation(fields: [skinResult], references: [result])
-  skinResult String
+  imageUrl   String
+  user       Users  @relation(fields: [user_id], references: [user_id])
+  user_id    Int
 }

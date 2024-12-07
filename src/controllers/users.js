@@ -16,7 +16,7 @@ const getAllUsers = async (req, res) => {
 
         response(200, users, 'Success to get all users', res)
     } catch (error) {
-        response(500, 'invalid', 'error', res)
+        response(500, 'invalid', error.message, res)
         console.log(error.message);
     }
 }
@@ -85,7 +85,7 @@ const loginUser = async (req, res) => {
 
         const userData = {
             token,
-            userId: user.id,
+            user_id: user.id,
             username: user.username,
             email: user.email,
         };
@@ -109,7 +109,7 @@ const logoutUser = (req, res) => {
 
 const getDetailUser = async (req, res) => {
     try {
-        const userId = parseInt(req.params.userId);
+        const userId = parseInt(req.params.user_id);
 
         if (!userId) {
             return response(400, 'error', 'User ID is required', res);
