@@ -90,6 +90,69 @@
                     }
                 }
             }
+        },
+        "/skin": {
+            "get": {
+                "tags": [
+                    "Skin"
+                ],
+                "summary": "Get all skin",
+                "responses": {
+                    "200": {
+                        "description": "Success to get all skin"
+                    }
+                }
+            }
+        },
+        "/skin/{skinId}": {
+            "get": {
+                "tags": [
+                    "Skin"
+                ],
+                "summary": "Get skin by id",
+                "responses": {
+                    "200": {
+                        "description": "Success to get skin detail"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Skin"
+                ],
+                "summary": "Delete skin by id",
+                "responses": {
+                    "200": {
+                        "description": "Success to delete skin by id"
+                    }
+                }
+            }
+        },
+        "/skin/user/{userId}": {
+            "get": {
+                "tags": [
+                    "Skin"
+                ],
+                "summary": "Get skin by user id",
+                "responses": {
+                    "200": {
+                        "description": "Success to get skin by user id"
+                    }
+                }
+            }
+        },
+        "/skin/predict": {
+            "post": {
+                "tags": [
+                    "Skin"
+                ],
+                "summary": "Predict skin",
+                "responses": {
+                    "200": {
+                        "description": "Success to predict skin"
+                    }
+                }
+            }
         }
     }
 }
