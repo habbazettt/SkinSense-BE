@@ -109,7 +109,7 @@ const logoutUser = (req, res) => {
 
 const getDetailUser = async (req, res) => {
     try {
-        const userId = parseInt(req.params.user_id);
+        const userId = parseInt(req.params.userId);
 
         if (!userId) {
             return response(400, 'error', 'User ID is required', res);

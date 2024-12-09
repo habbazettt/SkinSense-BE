@@ -9,6 +9,10 @@
         {
             "url": "http://localhost:3000",
             "description": "Development server"
+        },
+        {
+            "url": "https://skinsense-be-63760737120.asia-southeast2.run.app",
+            "description": "Production server"
         }
     ],
     "tags": [
