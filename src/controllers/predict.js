@@ -66,7 +66,7 @@ const postPredictData = async (req, res) => {
             return response(400, 'error', 'Failed to create skin entry: Skin data may already exist or user not found.', res);
         }
 
-        return response(200, { confidenceScore, label, result, suggestion }, 'Success', res);
+        return response(200, { confidenceScore, label, result, suggestion, imageUrl }, 'Success', res);
 
     } catch (error) {
         console.error("Internal Server Error:", error.message);
