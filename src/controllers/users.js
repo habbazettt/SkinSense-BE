@@ -25,8 +25,10 @@ const signupUser = async (req, res) => {
     try {
         // get data from request
         const {
+            name,
             username,
             email,
+            phone,
             password,
             repeatPassword
         } = req.body
@@ -49,8 +51,10 @@ const signupUser = async (req, res) => {
 
         // send user data to database
         const newUser = {
+            name,
             username,
             email,
+            phone,
             password: hashedPassword
         }
 
